@@ -1,0 +1,55 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build izlazi
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Rezultati build-a / testa
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.log
+
+# NuGet paketi
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ReSharper / Rider
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+.idea/
+
+# Privremeni / cache fajlovi
+*.tmp
+*.bak
+*.swp
+*.cache
+~$*
+
+# OS fajlovi
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Generisani podaci (output projekta)
+Measurements/
+measures_v2.csv
+measures_test.csv
+rejects.log
