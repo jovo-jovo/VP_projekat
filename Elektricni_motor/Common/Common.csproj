@@ -12,4 +12,8 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
 </Project>
