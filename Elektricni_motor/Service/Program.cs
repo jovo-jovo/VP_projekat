@@ -12,7 +12,7 @@ namespace Service
                 try
                 {
                     host.Open();
-                    Console.WriteLine("PMSM Monitoring servis pokrenut.");
+                    Console.WriteLine("Monitoring servis pokrenut.");
                     Console.WriteLine("Endpoints:");
                     foreach (var ep in host.Description.Endpoints)
                         Console.WriteLine($"  - {ep.Address}");
