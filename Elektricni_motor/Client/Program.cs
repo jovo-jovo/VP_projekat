@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Configuration;
 using System.ServiceModel;
+using System.Threading;
 using Common;
 
 namespace Client
@@ -13,6 +14,7 @@ namespace Client
             string csvPath = ConfigurationManager.AppSettings["csvPath"];
             string rejectsLog = ConfigurationManager.AppSettings["rejectsLog"];
             int maxRows = int.Parse(ConfigurationManager.AppSettings["maxRows"]);
+            int sendDelayMs = int.Parse(ConfigurationManager.AppSettings["sendDelayMs"]);
 
             var factory = new ChannelFactory<IMotorMonitoringService>("MotorMonitoringEndpoint");
             IMotorMonitoringService proxy = factory.CreateChannel();
@@ -59,6 +61,9 @@ namespace Client
                             Console.WriteLine($"  DataFormatFault: {dex.Detail.Detail}");
 
                         }
+                        
+                        // pauza, simulacija slanja u realnom vremenu
+                        if (sendDelayMs > 0) Thread.Sleep(sendDelayMs);
                     }
 
                     // end
@@ -77,7 +82,7 @@ namespace Client
             }
             finally
             {
-                // Uredno zatvaranje kanala
+                // Zatvaranje kanala
                 if (proxy is ICommunicationObject co)
                 {
                     try { co.Close(); }
